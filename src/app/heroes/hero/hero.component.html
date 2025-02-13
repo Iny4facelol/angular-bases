@@ -1,0 +1,38 @@
+<h1 class="text-red-500 font-bold text-4xl">{{ name }}</h1>
+
+<dl class="flex flex-col gap-3">
+  <div>
+    <td>Nombre:</td>
+    <dd>{{ name }}</dd>
+  </div>
+
+  <div>
+    <td>Edad:</td>
+    <dd>{{ age }}</dd>
+  </div>
+  <div>
+    <td>Método:</td>
+    <dd>{{ getHeroDescription() }}</dd>
+  </div>
+  <div>
+    <td>Capitalizado:</td>
+    <dd>{{ capitalizeName }}</dd>
+  </div>
+</dl>
+
+<div class="flex gap-2">
+  <button
+  *ngIf="name === 'Ironman'"
+  (click)="changeHero()" class="bg-indigo-300 border-2 rounded-2xl p-2">
+    Cambiar Nombre
+  </button>
+  <button
+  *ngIf="age === 40"
+  (click)="changeAge()" class="bg-indigo-300 border-2 rounded-2xl p-2">
+    Cambiar Edad
+  </button>
+  <button
+  (click)="resetForm()" class="bg-indigo-300 border-2 rounded-2xl p-2">
+    Reset
+  </button>
+</div>
